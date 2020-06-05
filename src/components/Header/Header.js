@@ -21,7 +21,7 @@ const Header = (props) => {
         i18n.changeLanguage(e.target.value);
     }
     return(
-        <header className="container-fluid d-flex pt-2">
+        <header className="container d-flex pt-2">
             <div className="mr-auto">
                 <p id="logo">COVID-19 BROADCAST</p>
             </div>  
