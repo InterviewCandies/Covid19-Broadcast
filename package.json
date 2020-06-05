@@ -18,7 +18,7 @@
     "react-scripts": "3.4.1",
     "react-simple-maps": "^2.0.0",
     "react-tooltip": "^4.2.6",
-    "homepage": "http://interviewcandies.github.io/Covid-19-Broadcast"
+    "homepage": "https://interviewcandies.github.io/Covid-19-Broadcast/"
   },
   "scripts": {
     "start": "react-scripts start",
