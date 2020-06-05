@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Scatter } from 'react-chartjs-2'
 import { DAILY_URL } from '../../api/api';
 import { useTranslation } from 'react-i18next'
+import { numberWithCommas } from '../../utils/commas';
 const ScatterGraph = () => {
     const mode = Number(localStorage.getItem('mode'));
     const { t } = useTranslation();
@@ -64,8 +65,8 @@ const ScatterGraph = () => {
         tooltips: {
             callbacks: {
                label: function(tooltipItem, data) {
-                  var label = data.labels[tooltipItem.index];
-                  return label + ": " + tooltipItem.yLabel + " " + t("cases");
+                  let label = data.labels[tooltipItem.index];
+                  return label + ": " + numberWithCommas(tooltipItem.yLabel) + " " + t("cases");
                }
             }
         },

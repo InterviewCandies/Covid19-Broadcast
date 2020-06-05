@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import USAMap from './USAMap'
 import { useTranslation } from 'react-i18next'
+import { numberWithCommas } from '../../utils/commas';
 const Maps = () => {
     const mode = Number(localStorage.getItem('mode'));
     const style = {
@@ -24,31 +25,31 @@ const Maps = () => {
                         <div className="form-group form-group-md row">
                             <label for="confirmed" className="col-5 col-form-label">{t("confirmed") + ": "}</label>
                             <div className="col-7">
-                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="confirmed" value={data.cases}/>
+                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="confirmed" value={numberWithCommas(data.cases)}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label for="deaths" className="col-5 col-form-label">{t("deaths") + ": "}</label>
                             <div className="col-7">
-                            <input type="text"className={"form-control-plaintext " + style.fontColor } id="deaths" value={data.deaths}/>
+                            <input type="text"className={"form-control-plaintext " + style.fontColor } id="deaths" value={numberWithCommas(data.deaths)}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label for="active" className="col-5 col-form-label">{t("active") + ": "}</label>
                             <div className="col-7">
-                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="active" value={data.active}/>
+                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="active" value={numberWithCommas(data.active)}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label for="todayCases" className="col-5 col-form-label">{t("todayCases") + ": "}</label>
                             <div className="col-7">
-                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="todayCases" value={data.todayCases}/>
+                            <input type="text" className={"form-control-plaintext " + style.fontColor } id="todayCases" value={numberWithCommas(data.todayCases)}/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label for="todayDeaths" className="col-5 col-form-label">{t("todayDeaths") + ": "}</label>
                             <div className="col-7">
-                            <input type="text" className={"form-control-plaintext " + style.fontColor }id="todayDeaths" value={data.todayDeaths}/>
+                            <input type="text" className={"form-control-plaintext " + style.fontColor }id="todayDeaths" value={numberWithCommas(data.todayDeaths)}/>
                             </div>
                         </div>
                         <div className="form-group row">

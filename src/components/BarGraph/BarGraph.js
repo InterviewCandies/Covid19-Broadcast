@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import { useTranslation } from 'react-i18next'
 import { HISTORY_URL } from '../../api/api';
+import { numberWithCommas } from '../../utils/commas';
 const BarGraph = () => {
     const mode = Number(localStorage.getItem('mode'));
     const style = {
@@ -29,7 +30,7 @@ const BarGraph = () => {
     const convertData = obj => {
         let list = [];
         Object.keys(obj).forEach( key => {
-            list.push({ x: key, y: obj[key]});
+            list.push({ x: key, y:  obj[key]});
         })
         return list;
     }
@@ -74,6 +75,18 @@ const BarGraph = () => {
         ]
     };
     }
+    const options = {
+        tooltips: {
+            callbacks: {
+               label: function(tooltipItem, data) {
+                   let label = data.datasets[tooltipItem.datasetIndex]["label"];
+                  return label + ": " + numberWithCommas(tooltipItem.yLabel);
+               }
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    }
     return(
         <div className="mt-5">
             <div className="d-flex flex-column flex-sm-row justify-content-between">
@@ -83,7 +96,7 @@ const BarGraph = () => {
                 </select>
             </div>
             <div  className={mode ? "light-mode card" : "dark-mode card"} style={{width : "100%"}}>
-                <Bar data={data} height={400} options={{responsive: true, maintainAspectRatio: false}}></Bar>
+                <Bar data={data} height={400} options={options}></Bar>
             </div>
         </div>
     )

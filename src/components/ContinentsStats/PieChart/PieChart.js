@@ -1,5 +1,6 @@
 import React from 'react'
 import { Polar } from 'react-chartjs-2'
+import { numberWithCommas } from '../../../utils/commas';
 
 const PieChart = (props) => {
     const options = { 
@@ -14,7 +15,15 @@ const PieChart = (props) => {
             color:  props.options["gridColor"]
             }
         },
-        responsive : true
+        responsive : true,
+        tooltips: {
+            callbacks: {
+               label: function(tooltipItem, data) {
+                  let label = data.labels[tooltipItem.index];
+                  return label + ": " + numberWithCommas(tooltipItem.yLabel);
+               }
+            }
+        },
     }
     const data = { 
         datasets: [{

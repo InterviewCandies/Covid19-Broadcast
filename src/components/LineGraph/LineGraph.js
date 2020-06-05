@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 import { GLOBAL_HISTORY_URL } from '../../api/api'
 import { useTranslation } from 'react-i18next'
+import { numberWithCommas } from '../../utils/commas'
 const LineGraph = () => {
     const [ globalHistory, setGlobalHistory ] = useState({});
     const { t } = useTranslation();
@@ -47,10 +48,33 @@ const LineGraph = () => {
         ]
         }
     }
+    const options = {
+        tooltips: {
+            callbacks: {
+               label: function(tooltipItem, data) {
+                   let label = data.datasets[tooltipItem.datasetIndex]["label"];
+                  return label + ": " + numberWithCommas(tooltipItem.yLabel);
+               }
+            }
+        },
+        responsive : true, 
+        elements : 
+            { 
+                line : 
+                    {
+                        fill : false
+                    }
+            }, 
+            legend : 
+            { 
+                labels : { usePointStyle : true
+                }
+            }
+    }
     return (
         <div style={{width:"100%"}}>
             <h5>{t("globalTimeline")}</h5>
-            <Line data={data} options={{ responsive : true, elements : { line : {fill : false}}, legend : { labels : { usePointStyle : true}}}}></Line>
+            <Line data={data} options={options}></Line>
         </div>
     )
 }

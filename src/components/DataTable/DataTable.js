@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { COUNTRY_URL } from '../../api/api';
 import { useTranslation } from 'react-i18next'
 import '../../styles/DataTable.css'
+import { numberWithCommas } from '../../utils/commas';
 const DataTable = () => {
     const mode = Number(localStorage.getItem('mode'));
     const style = {
@@ -39,11 +40,11 @@ const DataTable = () => {
                     <tr>
                     <th scope="row">{startIndex + index}</th>
                     <td><img src={country["countryInfo"]["flag"]} alt="" width="30px" height="20px" className="mr-2 d-none d-sm-inline"></img>{country["country"]}</td>
-                    <td>{country["cases"]}</td>
-                    <td>{country["deaths"]}</td>
-                    <td>{country["recovered"]}</td>
-                    <td>{country["todayCases"]}</td>
-                    <td>{country["todayDeaths"]}</td>
+                    <td>{numberWithCommas(country["cases"])}</td>
+                    <td>{numberWithCommas(country["deaths"])}</td>
+                    <td>{numberWithCommas(country["recovered"])}</td>
+                    <td>{numberWithCommas(country["todayCases"])}</td>
+                    <td>{numberWithCommas(country["todayDeaths"])}</td>
                     </tr>
                 </tbody>
             )
