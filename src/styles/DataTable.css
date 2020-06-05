@@ -1,0 +1,41 @@
+.view-rows {
+    width: 15vh;
+}
+.search-bar {
+    width: 40vh;
+}
+
+.dark-pagination {
+    background-color: #243447;
+    color : #fff;
+    border-color: rgba(0, 0, 0, 0.75);
+}
+
+.light-pagination {
+    color : #000;
+}
+
+.page-item.disabled .dark-pagination{
+    background-color: #141D26;
+    color: rgba(255, 255, 255, 0.75);
+    border: none;
+
+}
+.page-item.disabled .light-pagination{
+    background-color: #fafafa;
+}
+.dark-pagination:hover, .dark-pagination.active {
+    background-color: #C51F5D;
+    color: #fff;
+    border-color: rgba(0, 0, 0, 0.75);
+}
+
+.light-pagination:hover, .light-pagination.active {
+    background-color:#FFB347;
+    color: #000;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+

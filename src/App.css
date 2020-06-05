@@ -1,38 +1,67 @@
-.App {
+.card {
+  text-transform: uppercase;
+  width: 18rem;
   text-align: center;
+  padding: 10px;
+  margin: 3px 3px;
+  font-size: 1.5rem;
+}
+.card h1 {
+  font-size: 3.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logo {
+  padding: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dark-mode {
+  background-color: #141D26;
+  color: #ffffff;
+}
+.light-mode {
+  background-color: #fAFAFA;
+  color: #000000;
+}
+.dark-mode .card {
+  background-color: #243447;
+  color: #ffffff;
+}
+.dark-mode .card h1 {
+  color: #C51F5D
 }
 
-.App-link {
-  color: #61dafb;
+.dark-mode #logo {
+  background-color: #C51F5D;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.light-mode #logo {
+  background-color: #FFB347;
+}
+
+.light-mode .card {
+  background-color: #ffffff;
+  color: #000000;
+}
+.light-mode .card h1 {
+  color: #FFB347;
+}
+.btn {
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 400px;
+  width: 100%;
+  padding: 0;
 }
