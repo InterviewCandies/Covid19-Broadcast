@@ -17,10 +17,13 @@
     "react-i18next": "^11.5.0",
     "react-scripts": "3.4.1",
     "react-simple-maps": "^2.0.0",
-    "react-tooltip": "^4.2.6"
+    "react-tooltip": "^4.2.6",
+    "homepage": "http://interviewcandies.github.io/Covid-19-Broadcast"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
   }
 }
