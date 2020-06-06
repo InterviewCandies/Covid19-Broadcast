@@ -16,6 +16,7 @@ const PieChart = (props) => {
             }
         },
         responsive : true,
+        maintainAspectRatio: false,
         tooltips: {
             callbacks: {
                label: function(tooltipItem, data) {
@@ -34,9 +35,10 @@ const PieChart = (props) => {
         labels: props.labels
     }
     return(
-        <div>
-            <Polar data={data}  options={options}> </Polar>
+        <div style={{width:"100%"}}>
+            <Polar data={data}  options={options} height="300"> </Polar>
         </div>
+      
     )
 }
 

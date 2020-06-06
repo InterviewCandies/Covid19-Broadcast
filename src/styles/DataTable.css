@@ -38,4 +38,6 @@
 .form-control:focus {
     box-shadow: none;
 }
-
+.fa {
+    font-size: 0.7rem;
+}

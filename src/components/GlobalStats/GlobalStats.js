@@ -20,14 +20,14 @@ const GlobalStats = props => {
         fetchGlobalSummary();
     }, [])
     return (
-        <div className=" d-flex flex-column flex-lg-row align-items-center justify-content-lg-between">
-            <div>
-                <Card title={t('confirmed')} value={globalStats.cases}></Card>
+        <div className="card-deck">
+            <div className="col col-sm-6 col-lg-4">
+                 <Card title={t('confirmed')} value={globalStats.cases}></Card>
             </div>
-            <div>
+            <div className="col col-sm-6 col-lg-4">
                 <Card title={t('deaths')} value={globalStats.deaths}></Card>
             </div>
-            <div>
+            <div className="col col-sm-6 col-lg-4 mx-sm-auto mt-sm-3 mt-lg-0">
                 <Card title={t('recovered')} value={globalStats.recovered}></Card>
             </div>
         </div>

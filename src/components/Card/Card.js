@@ -3,8 +3,10 @@ import { numberWithCommas } from '../../utils/commas';
 const Card = (props) => {
     return (
         <div className='card'>
-            <h1>{numberWithCommas(Number(props.value))}</h1>
-            <p>{props.title}</p>
+            <div className="card-body">
+                <h3 className="card-text">{numberWithCommas(Number(props.value))}</h3>
+                <p className="card-text">{props.title}</p>
+            </div>
         </div>
     )
 }

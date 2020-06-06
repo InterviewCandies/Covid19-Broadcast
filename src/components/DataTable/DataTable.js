@@ -127,42 +127,56 @@ const DataTable = () => {
                     </div>
                 </div>
             </div>
-            <table className= {"table table-borderless " + (mode ? "border" : "")} style={style}>
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">{t("country")} 
-                        <span className="ml-1 fa fa-arrow-up " onClick={e => onSortUp(e, "country")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "country")}></span>
-                    </th>
-                    <th scope="col">{t("confirmed")}
-                        <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "cases")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "cases")}></span>
-                    </th>
-                    <th scope="col">{t("deaths")}
-                        <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "deaths")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "deaths")}></span> 
-                    </th>
-                    <th scope="col">{t("recovered")}
-                        <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "recovered")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "recovered")}></span>
-                    </th>
-                    <th scope="col">{t("todayCases")} 
-                        <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "todayCases")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "todayCases")}></span>
-                    </th>
-                    <th scope="col">{t("todayDeaths")}
-                        <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "todayDeaths")}></span>
-                        <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "todayDeaths")}></span>
-                    </th>
-                    </tr>
-                </thead>
-                {displayData()}
-            </table>
+            <div className="table-responsive">
+                <table className= {"table table-borderless " + (mode ? "border" : "")} style={style}>
+                    <thead>
+                        <tr>
+                        <th >#</th>
+                        <th>{t("country")} 
+                            <div className="d-inline-block d-inline">
+                                <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "country")}></span>
+                                <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "country")}></span>
+                            </div>
+                        </th>
+                        <th>{t("confirmed")}
+                        <div className="d-inline-block d-inline">
+                            <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "cases")}></span>
+                            <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "cases")}></span>
+                        </div>
+                        </th>
+                        <th>{t("deaths")}
+                            <div className="d-inline-block d-inline">
+                                <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "deaths")}></span>
+                                <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "deaths")}></span> 
+                            </div>
+                        </th>
+                        <th>{t("recovered")}
+                            <div className="d-inline-block d-inline">
+                                <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "recovered")}></span>
+                                <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "recovered")}></span>
+                            </div>
+                        </th>
+                        <th>{t("todayCases")} 
+                            <div className="d-inline-block d-inline">
+                                <span className="ml-1 fa fa-arrow-up " onClick={e => onSortUp(e, "todayCases")}></span>
+                                <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "todayCases")}></span>
+                            </div>
+                        </th>
+                        <th>{t("todayDeaths")}
+                            <div className="d-inline-block d-inline">
+                                <span className="ml-1 fa fa-arrow-up" onClick={e => onSortUp(e, "todayDeaths")}></span>
+                                <span className="fa fa-arrow-down" onClick={e => onSortDown(e, "todayDeaths")}></span>
+                            </div>
+                        </th>
+                        </tr>
+                    </thead>
+                    {displayData()}
+                </table>
+            </div>
 
             {copyCountriesData.length ? 
                 <nav aria-label="Page navigation">
-                    <ul className="pagination justify-content-center justify-content-md-end">
+                    <ul className="mt-3 mt-sm-0 pagination pagination-sm justify-content-center justify-content-sm-end flex-wrap">
                         <li className={"page-item" + (prev ? "" : " disabled")}>
                             <div className={"page-link " + (mode ? "light-pagination" : "dark-pagination")}  
                                 onClick={()=>prevClick()}>

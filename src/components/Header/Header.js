@@ -21,17 +21,16 @@ const Header = (props) => {
         i18n.changeLanguage(e.target.value);
     }
     return(
-        <header className="container d-flex pt-2">
-            <div className="mr-auto">
-                <p id="logo">COVID-19 BROADCAST</p>
-            </div>  
+        <header className="container d-flex flex-column flex-sm-row pt-2 align-items-center justify-content-sm-between">
             <div>
+                <p id="logo" className="mr-auto">COVID-19 BROADCAST</p>
+            </div>  
+            <div className="mb-3">
                 <select onChange={(e)=>handleLanguageChanged(e)} value={language} className={"form-control-sm m-0 " + (mode ? "light-select" : "dark-select")}>
                     {languages()}       
                 </select>
-            </div>
-            <div>
                 <button className="btn ml-2 btn-sm rounded-circle" style={style}  onClick={props.changed}><i className={mode?"fa fa-sun-o":"fa fa-moon-o"}></i></button>
+
             </div>
         </header>
     )

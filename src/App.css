@@ -1,13 +1,6 @@
 .card {
   text-transform: uppercase;
-  width: 18rem;
   text-align: center;
-  padding: 10px;
-  margin: 3px 3px;
-  font-size: 1.5rem;
-}
-.card h1 {
-  font-size: 3.5rem;
 }
 
 header {
@@ -15,9 +8,8 @@ header {
 }
 
 #logo {
-  padding: 5px;
+  padding: 0.25rem;
 }
-
 .dark-mode {
   background-color: #141D26;
   color: #ffffff;
@@ -30,7 +22,7 @@ header {
   background-color: #243447;
   color: #ffffff;
 }
-.dark-mode .card h1 {
+.dark-mode .card h3 {
   color: #C51F5D
 }
 
@@ -46,7 +38,7 @@ header {
   background-color: #ffffff;
   color: #000000;
 }
-.light-mode .card h1 {
+.light-mode .card h3 {
   color: #FFB347;
 }
 .btn {

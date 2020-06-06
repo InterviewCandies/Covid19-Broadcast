@@ -58,6 +58,7 @@ const LineGraph = () => {
             }
         },
         responsive : true, 
+        maintainAspectRatio: false,
         elements : 
             { 
                 line : 
@@ -72,9 +73,9 @@ const LineGraph = () => {
             }
     }
     return (
-        <div style={{width:"100%"}}>
+        <div style={{width :"100%", height: "300px"}}>
             <h5>{t("globalTimeline")}</h5>
-            <Line data={data} options={options}></Line>
+                <Line data={data} options={options}></Line>
         </div>
     )
 }

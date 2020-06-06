@@ -91,7 +91,7 @@ const BarGraph = () => {
         <div className="mt-5">
             <div className="d-flex flex-column flex-sm-row justify-content-between">
                 <h5>{t("timeline")}</h5>
-                <select className="form-control mb-3" onChange={e => handleSelect(e)} style={style}>
+                <select className="form-control-sm mb-3" onChange={e => handleSelect(e)} style={style}>
                      {displayCountryOption()}
                 </select>
             </div>

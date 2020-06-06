@@ -9,7 +9,7 @@ const Footer = props => {
             <div className="d-flex justify-content-center">
                 <p className="mb-1">{t("providedBy")} <a href="https://disease.sh/" target="_blank">NOVEL COVID API</a></p>
                 <p className="mx-2">|</p>
-                <p className="m-0">{t("powerBy")} <a href="https://github.com/InterviewCandies" target="_blank">Vo Quoc Thang</a></p>
+                <p className="m-0">{t("powerBy")} <a href="https://github.com/InterviewCandies/Covid19-Broadcast" target="_blank">Vo Quoc Thang</a></p>
             </div>
         </div>
     )
