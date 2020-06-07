@@ -21,7 +21,7 @@ const PieChart = (props) => {
             callbacks: {
                label: function(tooltipItem, data) {
                   let label = data.labels[tooltipItem.index];
-                  return label + ": " + numberWithCommas(tooltipItem.yLabel);
+                  return label + ": " + numberWithCommas(tooltipItem.yLabel) + " cases";
                }
             }
         },
