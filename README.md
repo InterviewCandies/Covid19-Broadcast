@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COVID-19 Broadcast
+Website: https://interviewcandies.github.io/Covid19-Broadcast/ 
+<br>
+A simple React web application to get lastest update around the world using Chartjs and D3 visualization. Data is provided by [Novel API](https://github.com/NovelCOVID/API)\
+This project is made during COVID-19 pandemic, i spend my time learning React and try to do something useful with this technology.  
+___
+## Light mode view 
+![light mode](/images/show-light-mode.png)
+___
+## Dark mode view
+![dark mode](images/show-dark-mode.png)
+---
+## Details 
+### Overview global numbers and each continents
+![global stats](/images/details-global.PNG)
+### COVID-19 status in each country 
+![country stats](/images/details-country.PNG)
+### COVID-19 Timeline by region
+![region stats](/images/details-region.PNG)
+### COVID-19 in USA states
+![usa states stats](/images/details-usa.PNG) 
+### COVID-19 Global cases by date
+![daily stats](/images/details-daily-global-cases.PNG)
+___
+## Technologies 
+* React 
+* React Hook 
+* Bootstrap
+* Chart-js
+----
+## Features
+* Responsive design 
+* Dark/ light mode
+* Support languages 
+    * English
+    * Vietnamese
+* Visualization
+---
+## What i learned
+* Using React Hook
+* Working with API 
+* Using multiple libraries
+* Deploy websites with github-pages 
+--- 
+## Credits
+* [Novel COVID-19](https://github.com/NovelCOVID/API)
+* [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
+* [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps)
+* [react-tooltip](https://github.com/wwayne/react-tooltip)
+---
+## License
+The MIT License (MIT)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+## Contact 
+* [Linkedin](https://www.linkedin.com/in/voqthang/)
+* [Email](voquocthangit@gmail.com)
