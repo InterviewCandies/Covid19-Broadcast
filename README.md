@@ -5,7 +5,7 @@ A simple React web application to get lastest update around the world using Char
 This project is made during COVID-19 pandemic, i spend my time learning React and try to do something useful with this technology.  
 ___
 ## Light mode view 
-![light mode](/images/show-light-mode.png)
+![light mode](images/show-light-mode.png)
 ___
 ## Dark mode view
 ![dark mode](images/show-dark-mode.png)
