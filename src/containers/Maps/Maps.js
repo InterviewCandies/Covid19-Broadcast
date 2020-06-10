@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import USAMap from './USAMap'
 import { useTranslation } from 'react-i18next'
-import { numberWithCommas } from '../../utils/commas';
+import { numberWithCommas } from '../../utils/numberWithCommas';
 const Maps = () => {
-    const mode = Number(localStorage.getItem('mode'));
+    const mode = localStorage.getItem('mode');
     const style = {
-        color : mode? "#FFB347" : "#C51F5D",
-        fontColor :  mode? "text-dark" : "text-light"
+        color : mode === "light-mode" ? "#FFB347" : "#C51F5D",
+        fontColor :  mode === "light-mode" ? "text-dark" : "text-light"
 
     }
     const { t } = useTranslation();
-    const [ data, setData ] = useState({"updated" : 0, "state" : "", "confirmed" : 0, "deaths" : 0, "active" : 0, "todayCases" : 0, "todayDeaths" : 0, "updated" : 0});
+    const [ data, setData ] = useState({"updated" : 0, "state" : "", "confirmed" : 0, "deaths" : 0, "active" : 0, "todayCases" : 0, "todayDeaths" : 0});
     const ts = new Date(data.updated);
     return (
         <div className="mt-5">

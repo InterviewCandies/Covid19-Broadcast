@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberWithCommas } from '../../utils/commas';
+import { numberWithCommas } from '../../../utils/numberWithCommas';
 const Card = (props) => {
     return (
         <div className='card'>

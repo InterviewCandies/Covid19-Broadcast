@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { COUNTRY_URL } from '../../api/api';
 import { useTranslation } from 'react-i18next'
-import '../../styles/DataTable.css'
-import { numberWithCommas } from '../../utils/commas';
+import './DataTable.css'
+import { numberWithCommas } from '../../utils/numberWithCommas';
 const DataTable = () => {
-    const mode = Number(localStorage.getItem('mode'));
+    const mode = localStorage.getItem('mode');
     const style = {
-        backgroundColor : mode? "#FFF" : "#243447",
-        color : mode? "#000" : "#FFF",
+        backgroundColor : mode === "light-mode" ? "#FFF" : "#243447",
+        color : mode === "light-mode" ? "#000" : "#FFF",
     }
     const { t } = useTranslation();
     const [ countriesData, setCountriesData ] = useState([]);
@@ -63,7 +63,7 @@ const DataTable = () => {
         return pageNumbers.map((num, index)=>{ 
             return (
                 <li className={"page-item" + (num === "..." ? " disabled" : "")}  key={index}>
-                    <div className={"page-link " + (mode ? "light-pagination" : "dark-pagination") + (currentPage === num ? " active" : "")}  
+                    <div className={"page-link " + (mode === "light-mode" ? "light-pagination" : "dark-pagination") + (currentPage === num ? " active" : "")}  
                        id={num} 
                        onClick={e => {setCurrentPage(Number(e.target.id));}}>
                         {num}
@@ -178,14 +178,14 @@ const DataTable = () => {
                 <nav aria-label="Page navigation">
                     <ul className="mt-3 mt-sm-0 pagination pagination-sm justify-content-center justify-content-sm-end flex-wrap">
                         <li className={"page-item" + (prev ? "" : " disabled")}>
-                            <div className={"page-link " + (mode ? "light-pagination" : "dark-pagination")}  
+                            <div className={"page-link " + (mode === "light-mode" ? "light-pagination" : "dark-pagination")}  
                                 onClick={()=>prevClick()}>
                                     {t("prev")}
                             </div>
                         </li>
                     {displayPagination()}
                     <li className={"page-item" + (next ? "" : " disabled")}>
-                            <div className={"page-link " + (mode ? "light-pagination" : "dark-pagination")} 
+                            <div className={"page-link " + (mode === "light-mode" ? "light-pagination" : "dark-pagination")} 
                                 onClick={()=>nextClick()}>
                                     {t("next")}
                             </div>

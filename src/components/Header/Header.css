@@ -1,0 +1,40 @@
+.dark-mode select , .dark-mode select:focus {
+    background-color: #141D26;
+    color : #ffffff;
+}
+
+.light-mode select, .light-mode select:focus {
+    background-color: #ffffff;
+    color : #000;
+}
+
+.form-control:focus {
+    border-color: inherit;
+}
+
+
+header {
+    font-weight: 700;
+}
+  
+#logo {
+    padding: 0.25rem;
+}
+
+.dark-mode {
+    background-color: #141D26;
+    color: #ffffff;
+}
+
+.light-mode {
+    background-color: #fAFAFA;
+    color: #000000;
+}
+
+.dark-mode #logo {
+    background-color: #C51F5D;
+}
+
+.light-mode #logo {
+    background-color: #FFB347;
+}

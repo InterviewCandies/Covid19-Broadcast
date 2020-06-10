@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import { useTranslation } from 'react-i18next'
 import { HISTORY_URL } from '../../api/api';
-import { numberWithCommas } from '../../utils/commas';
+import { numberWithCommas } from '../../utils/numberWithCommas';
 const BarGraph = () => {
     const mode = Number(localStorage.getItem('mode'));
+    const DEFAULT_COUNTRY = "USA";
     const style = {
         backgroundColor : mode? "#FFF" : "#243447",
         color : mode? "#000" : "#FFF",
         width: "50vh"
     }
     const [ history, setHistory ] = useState([]);
-    const [ currentCountry, setCurrentCountry ] = useState("USA");
+    const [ currentCountry, setCurrentCountry ] = useState(DEFAULT_COUNTRY);
     const [ currentProvince, setCurrentProvince] = useState(null);
     const { t } = useTranslation();
     useEffect(()=>{
@@ -40,7 +41,7 @@ const BarGraph = () => {
         });
         return countries.map(country => { 
           return ( 
-            country === "USA" ? <option value={country} key={country} selected>{country}</option> : 
+            country === DEFAULT_COUNTRY ? <option value={country} key={country} selected>{country}</option> : 
             <option value={country} key={country}>{country}</option>
           )
         })

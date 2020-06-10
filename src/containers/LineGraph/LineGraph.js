@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 import { GLOBAL_HISTORY_URL } from '../../api/api'
 import { useTranslation } from 'react-i18next'
-import { numberWithCommas } from '../../utils/commas'
+import { numberWithCommas } from '../../utils/numberWithCommas'
 const LineGraph = () => {
+    const mode = localStorage.getItem("mode");
     const [ globalHistory, setGlobalHistory ] = useState({});
     const { t } = useTranslation();
+    const style = { 
+        fontColor : mode === "light-mode" ? "#000" : "#FFF"
+    }
     useEffect(() => {
         async function fetchGlobalHistory () {
             try {
@@ -57,6 +61,18 @@ const LineGraph = () => {
                }
             }
         },
+        scales : {
+            xAxes: [{
+                ticks: {
+                    fontColor: style.fontColor,
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    fontColor: style.fontColor,
+                }
+            }]
+        },
         responsive : true, 
         maintainAspectRatio: false,
         elements : 
@@ -68,7 +84,9 @@ const LineGraph = () => {
             }, 
             legend : 
             { 
-                labels : { usePointStyle : true
+                labels : { 
+                    usePointStyle : true,
+                    fontColor : style.fontColor
                 }
             }
     }

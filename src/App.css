@@ -3,44 +3,24 @@
   text-align: center;
 }
 
-header {
-  font-weight: 700;
-}
-
-#logo {
-  padding: 0.25rem;
-}
-.dark-mode {
-  background-color: #141D26;
-  color: #ffffff;
-}
-.light-mode {
-  background-color: #fAFAFA;
-  color: #000000;
-}
 .dark-mode .card {
   background-color: #243447;
   color: #ffffff;
 }
+
 .dark-mode .card h3 {
   color: #C51F5D
-}
-
-.dark-mode #logo {
-  background-color: #C51F5D;
-}
-
-.light-mode #logo {
-  background-color: #FFB347;
 }
 
 .light-mode .card {
   background-color: #ffffff;
   color: #000000;
 }
+
 .light-mode .card h3 {
   color: #FFB347;
 }
+
 .btn {
   outline: none;
 }

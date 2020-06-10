@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Scatter } from 'react-chartjs-2'
 import { DAILY_URL } from '../../api/api';
 import { useTranslation } from 'react-i18next'
-import { numberWithCommas } from '../../utils/commas';
+import { numberWithCommas } from '../../utils/numberWithCommas';
 const ScatterGraph = () => {
-    const mode = Number(localStorage.getItem('mode'));
+    const mode = localStorage.getItem('mode');
+    const style = {
+        fontColor : mode === "light-mode" ? "#000" : "#FFF"
+    }
     const { t } = useTranslation();
     const [ dailyData, setDailyData ] = useState([]);
     const [ intitialDailyData, setInitialDailyData ] = useState([]);
@@ -35,7 +38,6 @@ const ScatterGraph = () => {
         let data = [...intitialDailyData];
         let index = Number(e.target.value);
         data.splice(index, intitialDailyData.length - index);
-        console.log(data.length);
         setDailyData([...data]);
     }
     let data = {}
@@ -45,22 +47,26 @@ const ScatterGraph = () => {
             datasets : [{
                 label : "confirmed",
                 data:extractData("deltaConfirmed"),
-                backgroundColor :  mode? "#FFB347" : "#C51F5D",
+                backgroundColor :  mode === "light-mode" ? "#FFB347" : "#C51F5D",
             }]
         }
     }
     const options = {
         scales: {
-            xAxes: [
-                {
+            xAxes: [{
                     ticks: 
                         {
+                            fontColor: style.fontColor,
                             callback: (value) => {
                             return new Date(value).toLocaleDateString('en-US', {month: "short",year: "numeric"});
                         }
                     }
+            }],
+            yAxes: [{
+                ticks: {
+                    fontColor: style.fontColor,
                 }
-            ]
+            }]
         },
         tooltips: {
             callbacks: {
@@ -79,8 +85,8 @@ const ScatterGraph = () => {
     return (
         <div className="mt-5">
             <div className="d-flex  flex-column flex-sm-row justify-content-between mb-3">
-                <h5 className="col-sm-4">{t("globalDailyCases")}</h5>
-                <div className="col-sm-4">
+                <h5>{t("globalDailyCases")}</h5>
+                <div>
                     <input type="range" 
                     className="form-control-range" 
                     min={0} 
@@ -90,7 +96,7 @@ const ScatterGraph = () => {
                     style ={{backgroundColor: "red"}}/>
                 </div>
             </div>
-            <div  className={mode ? "light-mode card" : "dark-mode card"} style={{width : "100%"}}>
+            <div  className={mode + " card"} style={{width : "100%"}}>
                 <Scatter data={data} height={400} options = {options}></Scatter>
             </div>
         </div>

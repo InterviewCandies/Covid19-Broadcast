@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/Footer.css'
+import './Footer.css'
 import { useTranslation } from 'react-i18next'
 const Footer = props => {
     const { t } = useTranslation();

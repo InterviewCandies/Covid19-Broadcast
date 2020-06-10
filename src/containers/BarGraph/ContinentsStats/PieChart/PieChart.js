@@ -1,6 +1,6 @@
 import React from 'react'
 import { Polar } from 'react-chartjs-2'
-import { numberWithCommas } from '../../../utils/commas';
+import { numberWithCommas } from '../../../utils/numberWithCommas';
 
 const PieChart = (props) => {
     const options = { 

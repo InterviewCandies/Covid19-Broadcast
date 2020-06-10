@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { useTranslation } from 'react-i18next'
 import { scaleLinear } from "d3-scale";
-import { STATE_URL } from "../../api/api";
+import { STATE_URL } from "../../../api/api";
 import ReactTooltip from "react-tooltip";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";

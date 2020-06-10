@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import PieChart from './PieChart/PieChart'
 import { useTranslation } from 'react-i18next'
-import { PROXY_URL, CONTINENT_URL } from '../../api/api';
+import { CONTINENT_URL } from '../../api/api';
 
 
 const ContinentsStats = () => {
-    const mode = Number(localStorage.getItem('mode'));
+    const mode = localStorage.getItem('mode');
     const { t } = useTranslation();
     const options = {
-        gridColor : mode? "#000" : "#FFF",
-        fontColor : mode? "#000" : "#FFF"
+        gridColor : mode === "light-mode"? "#000" : "#FFF",
+        fontColor : mode  === "light-mode"? "#000" : "#FFF"
     }
     const [ continents, setContinents ] = useState([]);
     useEffect(()=>{

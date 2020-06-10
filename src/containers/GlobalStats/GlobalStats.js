@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Card from '../Card/Card'
+import Card from './Card/Card'
 import { useTranslation } from 'react-i18next'
 import { GLOBAL_URL } from '../../api/api'
 const GlobalStats = props => {
