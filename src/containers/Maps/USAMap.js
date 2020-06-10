@@ -17,7 +17,7 @@ const USAMap = props => {
     async function fetchStates() {
         const result = await fetch(STATE_URL);
         const data = await result.json();
-        const state = data.find(item => item["state"] == DEFAULT_STATE);
+        const state = data.find(item => item["state"] === DEFAULT_STATE);
         setData([...data]);
         props.changed({...state})
     }
