@@ -5,22 +5,22 @@ A simple React web application to get lastest update around the world using Char
 This project is made during COVID-19 pandemic, i spend my time learning React and try to do something useful with this technology.  
 ___
 ## Light mode view 
-![light mode](images/show-light-mode.png)
+![light mode](/Images/show-light-mode.png)
 ___
 ## Dark mode view
-![dark mode](images/show-dark-mode.png)
+![dark mode](/Images/show-dark-mode.png)
 ---
 ## Details 
 ### Overview global numbers and each continents
-![global stats](/images/details-global.PNG)
+![global stats](/Images/details-global.PNG)
 ### COVID-19 status in each country 
-![country stats](/images/details-country.PNG)
+![country stats](/Images/details-country.PNG)
 ### COVID-19 Timeline by region
-![region stats](/images/details-region.PNG)
+![region stats](/Images/details-region.PNG)
 ### COVID-19 in USA states
-![usa states stats](/images/details-usa.PNG) 
+![usa states stats](/Images/details-usa.PNG) 
 ### COVID-19 Global cases by date
-![daily stats](/images/details-daily-global-cases.PNG)
+![daily stats](/Images/details-daily-global-cases.PNG)
 ___
 ## Technologies 
 * React 
