@@ -54,4 +54,4 @@ The MIT License (MIT)
 ---
 ## Contact 
 * [Linkedin](https://www.linkedin.com/in/voqthang/)
-* [Email](voquocthangit@gmail.com)
+* Email: voquocthangit@gmail.com
